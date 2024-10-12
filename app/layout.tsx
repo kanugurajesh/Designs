@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
+import Toggle from "@/components/Toggle";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
         <ThemeProvider
           attribute="class"
@@ -35,6 +36,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <div className="absolute top-4 left-4">
+          <Toggle />
+          </div>
           {children}
         </ThemeProvider>
       </body>

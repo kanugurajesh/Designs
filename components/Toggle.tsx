@@ -29,21 +29,19 @@ const Toggle = () => {
   if (!mounted) return null; // Prevent rendering before theme is set
 
   return (
-    <>
+    <div
+      onClick={changeTheme}
+      className={`w-16 h-9 bg-slate-200 flex rounded-full p-1 cursor-pointer items-center ${
+        theme === "dark" ? "justify-end" : "justify-start"
+      }`}
+    >
       <Toaster />
-      <div
-        onClick={changeTheme}
-        className={`w-16 h-9 bg-slate-200 flex rounded-full p-1 cursor-pointer items-center ${
-          theme === "dark" ? "justify-end" : "justify-start"
-        }`}
-      >
-        <motion.div
-          layout
-          transition={spring}
-          className="w-7 h-7 bg-white rounded-full"
-        />
-      </div>
-    </>
+      <motion.div
+        layout
+        transition={spring}
+        className="w-7 h-7 bg-white rounded-full"
+      />
+    </div>
   );
 };
 
