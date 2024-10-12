@@ -1,11 +1,4 @@
-"use client";
-
-import Toggle from "@/components/Toggle";
-import { useTheme } from "next-themes";
-
 export default function Home() {
-  const { theme } = useTheme();
-
   return (
     <main className="flex items-center justify-center min-h-screen bg-gray-50">
       <div className="relative w-full max-w-lg">
