@@ -1,7 +1,9 @@
+import Toggle from "@/components/Toggle";
+
 export default function Home() {
   return (
     <main>
-      <div></div>
+      <Toggle />
     </main>
   );
 }
