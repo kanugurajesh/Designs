@@ -1,41 +1,46 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 const Toggle = () => {
-  const [isOn, setIsOn] = useState<boolean>(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
+  // After mounting, we can safely access the theme
   useEffect(() => {
-    toast.dismiss();
-    if (isOn) {
-      toast.success("Switch is now on");
-    } else {
-      toast.error("Switch is now off");
-    }
-  }, [isOn]);
+    setMounted(true);
+  }, []);
 
-  const toggleSwitch = () => {
-    setIsOn((prevIsOn) => {
-      console.log("Switch is now", !prevIsOn ? "on" : "off");
-      return !prevIsOn;
-    });
+  const changeTheme = () => {
+    if (!mounted) return; // Prevent action if the theme is still undefined
+    toast.dismiss();
+    if (theme === "light") {
+      setTheme("dark");
+      toast.success("Dark mode enabled");
+    } else {
+      setTheme("light");
+      toast.success("Light mode enabled");
+    }
   };
+
+  if (!mounted) return null; // Prevent rendering before theme is set
 
   return (
     <>
       <Toaster />
       <div
-        onClick={toggleSwitch}
-        className={`w-40 h-24 bg-slate-200 flex rounded-full p-2 cursor-pointer ${
-          isOn ? "justify-end" : "justify-start"
+        onClick={changeTheme}
+        className={`w-16 h-9 bg-slate-200 flex rounded-full p-1 cursor-pointer items-center ${
+          theme === "dark" ? "justify-end" : "justify-start"
         }`}
       >
         <motion.div
           layout
           transition={spring}
-          className="w-20 h-20 bg-white rounded-full"
+          className="w-7 h-7 bg-white rounded-full"
         />
       </div>
     </>
