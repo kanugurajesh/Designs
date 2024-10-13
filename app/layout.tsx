@@ -16,8 +16,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "PodCaster",
-  description: "A Place to listen and host podcasts",
+  title: "Designs",
+  description: "I have created some awesome designs here",
 };
 
 export default function RootLayout({
@@ -36,9 +36,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="absolute top-4 left-4">
-          <Toggle />
-          </div>
           {children}
         </ThemeProvider>
       </body>

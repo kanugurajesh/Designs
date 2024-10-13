@@ -27,4 +27,7 @@ body {
   .animation-delay-4000 {
     animation-delay: 4s;
   }
+  .clip-inclined {
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
 }

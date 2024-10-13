@@ -15,6 +15,7 @@ const config: Config = {
       },
       animation: {
         blob: "blob 7s infinite",
+        tilt: "tilt 10s infinite linear",
       },
       keyframes: {
         blob: {
@@ -29,6 +30,17 @@ const config: Config = {
           },
           "100%": {
             transform: "tranlate(0px, 0px) scale(1)",
+          },
+        },
+        tilt: {
+          "0%, 50%, 100%": {
+            transform: "rotate(0deg)",
+          },
+          "25%": {
+            transform: "rotate(0.5deg)",
+          },
+          "75%": {
+            transform: "rotate(-0.5deg)",
           },
         },
       },
