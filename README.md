@@ -12,3 +12,6 @@
 
 ## Large Background Effect
 ![Screenshot 2024-10-16 093528](https://github.com/user-attachments/assets/284e3218-d869-4f19-9a14-5b504a885a20)
+
+## Small Ball Effect
+![Screenshot 2024-10-16 094558](https://github.com/user-attachments/assets/8526bf0d-b5c9-4745-9e13-12d1d2d909c7)
