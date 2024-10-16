@@ -9,3 +9,6 @@
 ## Background Card Lights
 
 ## Command Pallete
+
+## Large Background Effect
+![Screenshot 2024-10-16 093528](https://github.com/user-attachments/assets/284e3218-d869-4f19-9a14-5b504a885a20)
